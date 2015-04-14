@@ -1,2 +1,2 @@
-# mk-fooling-arround
+# martinkjemsdk
 Just fooling arround and trying some stuff
