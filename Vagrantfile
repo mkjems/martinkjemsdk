@@ -65,30 +65,6 @@ Vagrant.configure(2) do |config|
     # Enable provisioning with a shell script. Additional provisioners such as
     # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
     # documentation for more information about their specific syntax and use.
-    $script = <<-SCRIPT
-
-        echo I am provisioning...
-
-        # Write system description
-        lsb_release -a
-
-        # Update package system
-        sudo apt-get upgrade
-        sudo apt-get autoremove -y
-
-        # Nodejs and npm
-        curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
-        sudo apt-get install -y nodejs
-
-        # Celebrate!
-        date > /etc/vagrant_provisioned_at
-        pwd
-        echo "I'm done provisioning"
-
-    SCRIPT
-
-    config.vm.provision "shell", inline: $script
-
-    # sudo apt-get install -y npm
+    config.vm.provision "shell", path: "provision.sh"
 
 end

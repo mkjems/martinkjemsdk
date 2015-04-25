@@ -1,9 +1,10 @@
 
+PROJECT="Martins fede website"
+
 all: clean install test run
 
 test: ;@echo "Testing ${PROJECT}....."; \
-	export NODE_PATH=.; \
-	./node_modules/mocha/bin/mocha;
+	./node_modules/.bin/mocha --reporter list;
 
 install: ;@echo "Installing ${PROJECT}....."; \
 	npm install
@@ -12,6 +13,6 @@ clean : ;
 	rm -rf node_modules;
 
 run: ;
-	nodemon nodejs server.js;
+	nodemon ./server.js;
 
 .PHONY: test run install clean
