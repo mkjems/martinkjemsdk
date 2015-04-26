@@ -13,6 +13,6 @@ clean : ;
 	rm -rf node_modules;
 
 run: ;
-	nodemon ./server.js;
+	sudo nodemon ./server.js;
 
 .PHONY: test run install clean
