@@ -9,6 +9,9 @@ lsb_release -a
 sudo apt-get upgrade
 sudo apt-get autoremove -y
 
+# install make
+apt-get install make
+
 # Nodejs and npm
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 sudo apt-get install -y nodejs
