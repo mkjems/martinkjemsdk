@@ -12,7 +12,7 @@
   "main": "src/app.js",
   "scripts": {
     "test": "make test",
-    "start": "nodemon ./server.js"
+    "start": "sudo nodemon ./server.js &"
   },
   "dependencies":{
     "express": "4.12.x",

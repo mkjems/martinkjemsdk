@@ -14,6 +14,9 @@ clean : ;
 	rm -rf node_modules;
 
 run: ;
-	sudo nodemon ./server.js;
+	sudo nodemon ./server.js &;
+
+refresh: ;
+	osascript -e 'tell application "Google Chrome" to tell the active tab of its first window to reload'
 
 .PHONY: test run install clean
