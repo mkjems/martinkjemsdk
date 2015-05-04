@@ -1,3 +1,5 @@
+#!/usr/bin/env nodejs
+
 var express = require('express'),
     app = express(),
     fs = require('fs'),
@@ -33,8 +35,16 @@ app.use(function(err, req, res, next) {
 });
 
 // -- Start listening on port do some logging when ready --
-var server = app.listen(80, function () {
+var server = app.listen(8080, function () {
 	var host = server.address().address;
 	var port = server.address().port;
-	console.log('Example app listening at http://%s:%s', host, port);
+	console.log('Example app listening at http://%s:%s process: %d', host, port, process.pid);
 });
+
+// Create pid file
+if (fs.existsSync('/vagrant/tmp')===false) {
+	    fs.mkdirSync('/vagrant/tmp',0700);
+}
+fs.writeFile("/vagrant/tmp/pidfile.pid", process.pid);
+
+console.log(process.pid);

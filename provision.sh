@@ -10,7 +10,14 @@ sudo apt-get upgrade
 sudo apt-get autoremove -y
 
 # install make
-apt-get install make
+sudo apt-get install make
+
+# instal monit
+sudo apt-get install monit
+# Change monit conf permissions
+sudo chmod 0700 /etc/monit/monitrc
+# Copy our monitrc to /etc/monit/conf.d
+sudo cp monitrc /etc/monit/conf.d/
 
 # Nodejs and npm
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
@@ -22,6 +29,13 @@ npm install -g nodemon
 
 # Celebrate!
 date > /etc/vagrant_provisioned_at
+
 pwd
+MY_DIR=$(pwd)
+export MY_DIR
 echo "I'm done provisioning"
+
+# Start Monit
+echo "Starting monit"
+sudo monit
 

@@ -1,0 +1,11 @@
+
+
+check process server with pidfile /vagrant/tmp/pidfile.pid
+	start program = "/vagrant/server" uid root
+	stop program = "/vagrant/serverStop" uid root
+
+set httpd port 2812
+	allow localhost
+	allow 10.1.1.1
+	allow 127.0.0.1
+
