@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
         provider.token = ENV['DIGITAL_OCEAN_TOKEN']
         provider.ssh_key_name = "Mr-Kjems"
 	override.vm.synced_folder "./", "/vagrant"
-	override.vm.network "forwarded_port", guest: 8080, host: 4000
+	override.vm.network "forwarded_port", guest: 8080, host: 80
     end
 
     # Create a forwarded port mapping which allows access to a specific port
