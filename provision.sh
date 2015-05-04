@@ -17,7 +17,7 @@ sudo apt-get install monit
 # Change monit conf permissions
 sudo chmod 0700 /etc/monit/monitrc
 # Copy our monitrc to /etc/monit/conf.d
-sudo cp monitrc /etc/monit/conf.d/
+sudo cp /vagrant/monitrc /etc/monit/conf.d/
 
 # Nodejs and npm
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
@@ -35,7 +35,10 @@ MY_DIR=$(pwd)
 export MY_DIR
 echo "I'm done provisioning"
 
+# Delete tmp dir
+sudo rm -rf /vagrant/tmp/
+
 # Start Monit
 echo "Starting monit"
-sudo monit
+sudo monit -vv
 

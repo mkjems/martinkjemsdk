@@ -47,4 +47,5 @@ if (fs.existsSync('/vagrant/tmp')===false) {
 }
 fs.writeFile("/vagrant/tmp/pidfile.pid", process.pid);
 
-console.log(process.pid);
+console.log('Processid: ' + process.pid);
+console.log('MY_DIR: ' + process.env.MY_DIR);

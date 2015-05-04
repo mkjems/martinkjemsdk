@@ -19,7 +19,7 @@ Vagrant.configure(2) do |config|
         provider.region = "ams2"
         provider.token = ENV['DIGITAL_OCEAN_TOKEN']
         provider.ssh_key_name = "Mr-Kjems"
-	override.vm.synced_folder "./", "/srv/website"
+	override.vm.synced_folder "./", "/vagrant"
 	override.vm.network "forwarded_port", guest: 8080, host: 4000
     end
 
