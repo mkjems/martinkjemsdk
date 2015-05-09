@@ -21,7 +21,7 @@ app.get('/hallo', function(req,res) {
 });
 
 // Handle all static files
-app.use('/', express.static('static'));
+app.use('/', express.static(__dirname + '/static'));
 
 // Handle 404
 app.get('*', function (req, res) {
