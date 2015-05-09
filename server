@@ -35,7 +35,7 @@ app.use(function(err, req, res, next) {
 });
 
 // -- Start listening on port do some logging when ready --
-var server = app.listen(8080, function () {
+var server = app.listen(80, function () {
 	var host = server.address().address;
 	var port = server.address().port;
 	console.log('Example app listening at http://%s:%s process: %d', host, port, process.pid);

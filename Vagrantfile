@@ -20,13 +20,12 @@ Vagrant.configure(2) do |config|
         provider.token = ENV['DIGITAL_OCEAN_TOKEN']
         provider.ssh_key_name = "Mr-Kjems"
         override.vm.synced_folder "./", "/vagrant"
-        # override.vm.network "forwarded_port", guest: 8080, host: 80
     end
 
     # Create a forwarded port mapping which allows access to a specific port
     # within the machine from a port on the host machine. In the example below,
     # accessing "localhost:8080" will access port 80 on the guest machine.
-    config.vm.network "forwarded_port", guest: 8080, host: 80
+    #config.vm.network "forwarded_port", guest: 8080, host: 80
 
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
@@ -44,7 +43,7 @@ Vagrant.configure(2) do |config|
     	#override.vm.box = 'chef/ubuntu-14.10'
     	# Customize the amount of memory on the VM:
     	vb.memory = "1024"
-    	override.vm.network "forwarded_port", guest: 8080, host: 2000
+    	override.vm.network "forwarded_port", guest: 80, host: 2000
     end
 
     # Enable provisioning with a shell script. Additional provisioners such as
