@@ -1,0 +1,11 @@
+Port Scan has started…
+
+Port Scanning host: 95.85.56.166
+
+	 Open TCP Port: 	21     		ftp
+	 Open TCP Port: 	22     		ssh
+	 Open TCP Port: 	80     		http
+	 Open TCP Port: 	554    		rtsp
+	 Open TCP Port: 	2812   		atmtcp
+	 Open TCP Port: 	7070   		arcp
+Port Scan has completed

@@ -30,6 +30,10 @@ npm install -g nodemon
 # Celebrate!
 date > /etc/vagrant_provisioned_at
 
+# Install npm packs for server
+cd /vagrant
+npm install
+
 pwd
 MY_DIR=$(pwd)
 export MY_DIR
@@ -37,6 +41,9 @@ echo "I'm done provisioning"
 
 # Delete tmp dir
 sudo rm -rf /vagrant/tmp/
+
+mkdir /vagrant/tmp/
+mkdir -p /vagrant/logs/
 
 # Start Monit
 echo "Starting monit"
