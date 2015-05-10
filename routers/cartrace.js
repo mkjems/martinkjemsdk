@@ -1,6 +1,15 @@
 var path = require('path');
 
-exports.register = function(app) {
+exports.register = function(app,io) {
+
+	io.on('connection', function(socket) {
+	    socket.emit('news', {
+	        hello: 'world'
+	    });
+	    socket.on('my other event', function(data) {
+	        console.log(data);
+	    });
+	});
 
     //Handle cartrace
     app.get('/cartrace', function(req, res) {

@@ -7,15 +7,17 @@ var morgan = require('morgan');
 var express = require('express');
 
 var app = express();
+var server = http.createServer(app);
+var io = require('socket.io')(server);
 
 // -- Middleware -
-//var accessLogStream = fs.createWriteStream(__dirname + '/logs/access.log', {flags: 'a'});
-//app.use(morgan('combined',{stream: accessLogStream}));
+var accessLogStream = fs.createWriteStream(__dirname + '/logs/access.log', {flags: 'a'});
+app.use(morgan('combined',{stream: accessLogStream}));
 
 // -- Handlers --
 
 require('./routers/website').register(app);
-require('./routers/cartrace').register(app);
+require('./routers/cartrace').register(app, io);
 
 // Force an error
 app.get('/crash', function(req,res) {
@@ -36,28 +38,9 @@ app.use(function(err, req, res, next) {
 	res.status(500).sendFile(__dirname + '/static/500.html');
 });
 
-var server = http.createServer(app);
 // -- Start listening on port do some logging when ready --
 server.listen(80, function () {
 	var host = server.address().address;
 	var port = server.address().port;
 	console.log('App listening at http://%s:%s process: %d', host, port, process.pid);
 });
-
-var io = require('socket.io')(server);
-
-io.on('connection', function(socket) {
-    socket.emit('news', {
-        hello: 'world'
-    });
-    socket.on('my other event', function(data) {
-        console.log(data);
-    });
-});
-
-
-
-
-
-console.log('Processid: ' + process.pid);
-
