@@ -1,16 +1,13 @@
+all: install test run
 
-PROJECT="Martins fede website"
-
-all: clean install test run
-
-test: ;@echo "Testing ${PROJECT}....."; \
+test: ;@echo "Testing ....."; \
 	./node_modules/.bin/mocha --reporter list;
 
 install: ;@echo "Installing ${PROJECT}....."; \
 	mkdir -p logs;
 	npm install;
 
-clean : ;
+clean: ;
 	rm -rf node_modules;
 
 run: ;
@@ -18,5 +15,8 @@ run: ;
 
 refresh: ;
 	osascript -e 'tell application "Google Chrome" to tell the active tab of its first window to reload'
+
+setup:
+	npm install -g react-tools
 
 .PHONY: test run install clean

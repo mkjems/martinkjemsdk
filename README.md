@@ -1,3 +1,17 @@
 # martinkjemsdk
-Just fooling arround and trying some stuff.
-Trying to use vagrant as a development tool.
+
+##Technologies used in this project
+
+Vagrant - Virtual machines
+
+React - Fancy templates du jour
+
+```sh
+  npm install -g react-tools
+```
+
+Entr - file watcher
+
+```sh
+   brew install entr
+```

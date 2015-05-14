@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "**********************************************"
-echo "I am starting the provisioning now"
+echo "I am starting provisioning"
 echo "**********************************************"
 
 # Write system description
@@ -31,14 +31,25 @@ echo "**********************************************"
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 sudo apt-get install -y nodejs
 
+# install nodemon
+
+npm install -g nodemon
+
 echo "**********************************************"
-echo "Install npm packages"
+echo "Install server npm packages"
 echo "**********************************************"
 
 # Install npm packs for server
 npm config set loglevel info
-cd /vagrant
+cd /vagrant/server
 npm install
+
+echo "**********************************************"
+echo "Build website"
+echo "**********************************************"
+
+cd /vagrant/client
+make build
 
 echo "**********************************************"
 echo "Create some folders"
@@ -49,8 +60,8 @@ MY_DIR=$(pwd)
 export MY_DIR
 date > /etc/vagrant_provisioned_at
 
-mkdir -p /vagrant/tmp/
-mkdir -p /vagrant/logs/
+mkdir -p /vagrant/server/tmp/
+mkdir -p /vagrant/server/logs/
 
 echo "**********************************************"
 echo "Install supervisord"

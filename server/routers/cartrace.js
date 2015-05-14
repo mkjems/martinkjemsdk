@@ -13,12 +13,12 @@ exports.register = function(app,io) {
 
     //Handle cartrace
     app.get('/cartrace', function(req, res) {
-        res.sendFile(path.resolve(__dirname + '/../static/cartrace/cartrace.html'));
+        res.sendFile(path.resolve(__dirname + '/../../build/static/cartrace/cartrace.html'));
     });
 
     //Handle cartrace
     app.get('/cartrace/:gamecode/game', function(req, res) {
-        res.sendFile(path.resolve(__dirname + '/../static/cartrace/game.html'));
+        res.sendFile(path.resolve(__dirname + '/../../build/static/cartrace/game.html'));
     });
 
 };
