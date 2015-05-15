@@ -15,3 +15,20 @@ Entr - file watcher
 ```sh
    brew install entr
 ```
+
+## Operation
+
+Start the server for local development inside virtualbox with:
+
+```sh
+    PROVISION_ARGS='dev-mode' vagrant up --provider=virtualbox
+```
+
+dev-mode restarts the server when server code changes.
+Normaly supervisord just starts the server and keeps it running, but this is ot so nice for dev.
+
+To deploy it on my website:
+
+```
+	vagrant up --provider=digital_ocean
+```

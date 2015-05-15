@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 echo "**********************************************"
-echo "I am starting provisioning"
+echo "I am starting provisioning "
+echo $1
 echo "**********************************************"
 
 # Write system description
@@ -45,7 +46,7 @@ cd /vagrant/server
 npm install
 
 echo "**********************************************"
-echo "Build website"
+echo "Build client website"
 echo "**********************************************"
 
 cd /vagrant/client
@@ -55,6 +56,7 @@ echo "**********************************************"
 echo "Create some folders"
 echo "**********************************************"
 
+cd /vagrant/
 pwd
 MY_DIR=$(pwd)
 export MY_DIR
@@ -70,8 +72,19 @@ echo "**********************************************"
 sudo apt-get install python-setuptools
 sudo easy_install supervisor
 
-# start supervisord
-sudo supervisord -c /vagrant/supervisord.conf
+if [ $1 = "dev-mode" ]; then
+	echo "**********************************************"
+	echo "Starting node server in dev-mode"
+	echo "**********************************************"
+	cd /vagrant/server
+	sudo nodemon -w routes server
+else
+	echo "**********************************************"
+	echo "Starting supervisord"
+	echo "**********************************************"
+	# start supervisord that will start the server
+	sudo supervisord -c /vagrant/supervisord.conf
+fi
 
 echo "**********************************************"
 echo "Done provisioning..."

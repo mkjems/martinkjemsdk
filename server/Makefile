@@ -7,13 +7,13 @@ install: ;@echo "Installing ${PROJECT}....."; \
 	mkdir -p logs;
 	npm install;
 
-clean: ;
+clean:
 	rm -rf node_modules;
 
-run: ;
-	sudo nodemon ./server.js &;
+start-dev:
+	sudo nodemon -w routers server
 
-refresh: ;
+refresh:
 	osascript -e 'tell application "Google Chrome" to tell the active tab of its first window to reload'
 
 setup:
