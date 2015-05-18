@@ -1,10 +1,11 @@
-all: install test run
+all: install test
 
-test: ;@echo "Testing ....."; \
+test:
 	./node_modules/.bin/mocha --reporter list;
 
-install: ;@echo "Installing ${PROJECT}....."; \
+install:
 	mkdir -p logs;
+	mkdir -p tmp;
 	npm install;
 
 clean:
