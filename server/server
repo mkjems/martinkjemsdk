@@ -12,6 +12,8 @@ var server = http.createServer(app);
 var io = require('socket.io')(server);
 
 // -- Middleware -
+
+// logging
 var accessLogStream = fs.createWriteStream(__dirname + '/logs/access.log', {flags: 'a'});
 app.use(morgan('combined',{stream: accessLogStream}));
 
@@ -20,28 +22,26 @@ app.use(morgan('combined',{stream: accessLogStream}));
 require('./routers/website').register(app);
 require('./routers/cartrace').register(app, io);
 
-// Force an error
-app.get('/crash', function(req,res) {
-	require('none-existing-file').call();
-});
-
 // Handle all static files
-app.use('/', express.static(path.resolve(__dirname + '/../client/build/static')) );
+app.use('/', express.static(path.resolve(__dirname + '/../client-build/static')) );
 
-// Handle 404
-app.get('*', function (req, res) {
-	res.status('404').sendFile(path.resolve(__dirname + '/../client/build/static/404.html'));
-});
+// 404 page etc.
+require('./routers/basic-server').register(app);
 
 // Handle server errors
 app.use(function(err, req, res, next) {
 	console.error(err.stack);
-	res.status(500).sendFile(path.resolve(__dirname + '/../client/build/static/500.html'));
+	res.status(500).sendFile(path.resolve(__dirname + '/../client-build/static/error/500.html'));
 });
 
 // -- Start listening, do some logging when ready --
+
 server.listen(80, function () {
 	var host = server.address().address;
 	var port = server.address().port;
-	console.log('App toootally listening at http://%s:%s process: %d', host, port, process.pid);
+	console.log('App totally listening at http://%s:%s process: %d', host, port, process.pid);
 });
+
+
+// -- start the cartrace game engine
+require('./cartrace/connection').run(io);

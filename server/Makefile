@@ -11,7 +11,7 @@ clean:
 	rm -rf node_modules;
 
 start-dev:
-	sudo nodemon -w routers server
+	sudo nodemon -w routers -w cartrace server
 
 refresh:
 	osascript -e 'tell application "Google Chrome" to tell the active tab of its first window to reload'
@@ -19,4 +19,3 @@ refresh:
 setup:
 	npm install -g react-tools
 
-.PHONY: test run install clean

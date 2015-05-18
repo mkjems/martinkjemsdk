@@ -11,9 +11,9 @@ var ExampleApplication = React.createClass({
 
 var start = new Date().getTime();
 
-setInterval(function() {
+setTimeout(function() {
   React.render(
     <ExampleApplication elapsed={new Date().getTime() - start} />,
     document.getElementById('container')
   );
-}, 50);
+}, 1000);

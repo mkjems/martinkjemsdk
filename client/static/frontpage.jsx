@@ -1,5 +1,5 @@
 
-function hallo(){
-	console.log('Your are on the front page');
+function hallo(name){
+	console.log(name + ' Your are on the front page');
 }
-hallo();
+hallo('Martin');

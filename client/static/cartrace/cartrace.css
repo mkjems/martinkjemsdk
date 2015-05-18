@@ -1,0 +1,12 @@
+
+body{
+	background-color: rgb(10,0,0);
+	color: white;
+}
+a, a:visited {
+	color: yellow;
+}
+
+canvas {
+	display: block;
+}
