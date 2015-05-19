@@ -43,13 +43,14 @@ echo "**********************************************"
 # Install npm packs for server
 npm config set loglevel info
 cd /vagrant/server
-npm install
+make install
 
 echo "**********************************************"
 echo "Build client website"
 echo "**********************************************"
 
 cd /vagrant/client
+sudo npm install -g react-tools
 make build
 
 echo "**********************************************"
@@ -76,6 +77,10 @@ if [ $1 = "dev-mode" ]; then
 	echo "**********************************************"
 	echo "Starting node server in dev-mode"
 	echo "**********************************************"
+
+	# install entr
+	sudo apt-get install entr
+
 	cd /vagrant/server
 	sudo nodemon -w routes server
 else

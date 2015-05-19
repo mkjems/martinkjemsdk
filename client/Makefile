@@ -49,3 +49,4 @@ build: build-jsx copy-js copy-html copy-css copy-favion copy-vendor
 
 watch-static:
 	find static/ | entr sh -c 'make build'
+
