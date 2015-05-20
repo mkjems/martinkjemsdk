@@ -32,3 +32,6 @@ To deploy it on my website:
 ```
 	vagrant up --provider=digital_ocean
 ```
+
+## Insightfull links on the topic of this project
+http://stackoverflow.com/questions/10930286/socket-io-rooms-or-namespacing
