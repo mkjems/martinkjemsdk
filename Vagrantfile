@@ -39,7 +39,7 @@ Vagrant.configure(2) do |config|
     config.vm.provider "virtualbox" do |vb, override|
     	# Display the VirtualBox GUI when booting the machine
     	#vb.gui = true
-    	override.vm.box = 'bunchc/utopic-x64'
+    	override.vm.box = 'ubuntu/trusty64'
     	#override.vm.box = 'chef/ubuntu-14.10'
     	# Customize the amount of memory on the VM:
     	vb.memory = "1024"
