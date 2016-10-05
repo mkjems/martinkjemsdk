@@ -9,11 +9,22 @@ echo "**********************************************"
 lsb_release -a
 
 echo "**********************************************"
+echo "Set some localisation "
+echo "**********************************************"
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+locale-gen en_US.UTF-8
+dpkg-reconfigure locales
+
+echo "**********************************************"
 echo "Upgrade apt-get"
 echo "**********************************************"
 
 # Update package system
 sudo apt-get upgrade
+
+sudo apt-get update
 
 echo "**********************************************"
 echo "Delete some apt-get stuff"
@@ -29,19 +40,22 @@ echo "Installing node"
 echo "**********************************************"
 
 # Nodejs and npm
-curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-# install nodemon
+# npm build tools
+sudo apt-get install -y build-essential
 
-npm install -g nodemon
+# install nodemon
+sudo npm install -g nodemon
 
 echo "**********************************************"
 echo "Install server npm packages"
 echo "**********************************************"
 
 # Install npm packs for server
-npm config set loglevel info
+# sudo npm config set loglevel info
 cd /vagrant/server
 make install
 
@@ -80,7 +94,7 @@ if [ -z $1 ]; then
 	# start supervisord that will start the server
 	sudo supervisord -c /vagrant/supervisord.conf
 
-elif [ $1 = "dev-mode" ]
+elif [ $1 = "dev-mode" ] ; then
 
 	echo "**********************************************"
 	echo "Starting node server in dev-mode"
