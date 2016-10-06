@@ -3,3 +3,6 @@ dev-machine:
 
 prod-machine:
 	vagrant up --provider=digital_ocean --provision
+
+prod-machine-redeploy:
+	vagrant rebuild
