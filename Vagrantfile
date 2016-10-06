@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
         override.vm.synced_folder "./", "/vagrant"
         override.vm.box = "digital_ocean"
         override.ssh.private_key_path = "~/.ssh/id_rsa"
-        override.ssh_key_name = "Mr-Kjems"
 
+        provider.ssh_key_name = "Mr-Kjems"
         provider.image = "ubuntu-14-04-x64"
         provider.region = "ams2"
         provider.token = ENV['DIGITAL_OCEAN_TOKEN']
