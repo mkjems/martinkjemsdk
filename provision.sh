@@ -92,8 +92,8 @@ then
 
 	# install entr
 	sudo apt-get install entr
-	cd /vagrant/client
-	make watch-static
+	# cd /vagrant/client
+	# make watch-static
 
 	cd /vagrant/server
 	sudo nodemon -w routes server &
