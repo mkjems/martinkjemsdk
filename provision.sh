@@ -84,15 +84,8 @@ echo "**********************************************"
 sudo apt-get install python-setuptools
 sudo easy_install supervisor
 
-if [ -z $1 ]; then
-	echo "**********************************************"
-	echo "Starting supervisord"
-	echo "**********************************************"
-	# start supervisord that will start the server
-	sudo supervisord -c /vagrant/supervisord.conf
-fi
-
-if [ $1 = "dev-mode" ]; then
+if [ "$1" == "dev-mode" ]
+then
 	echo "**********************************************"
 	echo "Starting node server in dev-mode"
 	echo "**********************************************"
@@ -104,7 +97,12 @@ if [ $1 = "dev-mode" ]; then
 
 	cd /vagrant/server
 	sudo nodemon -w routes server &
-
+else
+	echo "**********************************************"
+	echo "Starting supervisord"
+	echo "**********************************************"
+	# start supervisord that will start the server
+	sudo supervisord -c /vagrant/supervisord.conf
 fi
 
 echo "**********************************************"
