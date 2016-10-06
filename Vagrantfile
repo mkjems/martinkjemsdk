@@ -19,10 +19,6 @@ Vagrant.configure("2") do |config|
         provider.image = "ubuntu-14-04-x64"
         provider.region = "ams2"
         provider.token = ENV['DIGITAL_OCEAN_TOKEN']
-
-        # provider.api_key = "fe9d34749e6a5493bc2ddbe393d115ab"
-        # provider.client_id = "f1ac086b6bd870ec817c8a9dfa0f9097"
-
     end
 
     config.vm.provision "shell", path: "provision.sh" , args: ENV['PROVISION_ARGS']
