@@ -17,10 +17,11 @@ echo "**********************************************"
 echo "Upgrade apt-get"
 echo "**********************************************"
 
-# Update package system
-sudo apt-get upgrade
-
+# Update package system list of available packages
 sudo apt-get update
+# Upgrade packages
+sudo apt-get dist-upgrade
+
 
 echo "**********************************************"
 echo "Delete some apt-get stuff"
