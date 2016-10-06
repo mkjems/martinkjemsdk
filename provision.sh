@@ -6,16 +6,12 @@ echo $1
 echo "**********************************************"
 
 # Write system description
-lsb_release -a
+# lsb_release -a
 
 echo "**********************************************"
 echo "Set some localisation "
 echo "**********************************************"
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-locale-gen en_US.UTF-8
-dpkg-reconfigure locales
+sudo locale-gen UTF-8
 
 echo "**********************************************"
 echo "Upgrade apt-get"
@@ -48,7 +44,7 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
 
 # install nodemon
-sudo npm install -g nodemon
+sudo npm install -g nodemon --no-optional
 
 echo "**********************************************"
 echo "Install server npm packages"
@@ -93,9 +89,9 @@ if [ -z $1 ]; then
 	echo "**********************************************"
 	# start supervisord that will start the server
 	sudo supervisord -c /vagrant/supervisord.conf
+fi
 
-elif [ $1 = "dev-mode" ] ; then
-
+if [ $1 = "dev-mode" ]; then
 	echo "**********************************************"
 	echo "Starting node server in dev-mode"
 	echo "**********************************************"
@@ -103,10 +99,11 @@ elif [ $1 = "dev-mode" ] ; then
 	# install entr
 	sudo apt-get install entr
 	cd /vagrant/client
-	make watch-static &
+	make watch-static
 
 	cd /vagrant/server
 	sudo nodemon -w routes server &
+
 fi
 
 echo "**********************************************"
