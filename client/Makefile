@@ -50,5 +50,5 @@ clean:
 build: build-jsx copy-js copy-html copy-css copy-vendor $(D_FAVICON)
 
 watch-static:
-	find static/ | entr sh -c 'make build'
+	find static | entr sh -c 'make build'
 
