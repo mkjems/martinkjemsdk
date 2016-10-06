@@ -6,7 +6,7 @@ test:
 install:
 	mkdir -p logs;
 	mkdir -p tmp;
-	npm install;
+	npm install --no-optional;
 
 clean:
 	rm -rf node_modules;
