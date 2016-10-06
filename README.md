@@ -30,7 +30,6 @@ Normaly supervisord just starts the server and keeps it running, but this is ot 
 To deploy it on my website:
 
 ```
-	vagrant destroy --provider=digital_ocean
 	vagrant up --provider=digital_ocean --provision
 ```
 
