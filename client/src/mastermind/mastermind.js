@@ -1,2 +1,2 @@
 console.log('Mastermind');
-require('../logger');
+import '../frontpage/logger';

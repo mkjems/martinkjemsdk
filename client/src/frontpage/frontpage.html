@@ -4,10 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=0">
 	<title>Martinkjems.dk</title>
-	<link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" />
-	<!-- <script src="/socket.io/socket.io.js"></script> -->
-	<link rel="stylesheet" href="frontpage.css">
-	<script src="frontpage.js"></script>
+	<link rel="shortcut icon" href="frontpage/favicon.ico?v=2" type="image/x-icon" />
+	<link rel="stylesheet" href="frontpage/frontpage.css">
 </head>
 	<body>
 		<header>
@@ -21,7 +19,7 @@
 		<div class="container">
 			<section class="sec_01">
 				<div class="section-illu">
-					<svg width="300px" height="300px">
+					<svg width="300px" height="300px" xmlns="http://www.w3.org/2000/svg">
 		   				<circle cx="150px" cy="150px" r="140px" stroke-width="0px" fill="#f2f4f7" />
 		   			</svg>
 		   		</div>
@@ -33,7 +31,7 @@
 			</section>
 			<section class="sec_02">
 				<div class="section-illu">
-					<svg width="300px" height="300px">
+					<svg width="300px" height="300px" xmlns="http://www.w3.org/2000/svg">
 		   				<circle cx="150px" cy="150px" r="140px" stroke-width="0px" fill="#f2f4f7" />
 		   			</svg>
 		   		</div>
@@ -44,9 +42,12 @@
 						This is a version of the old classic: Mastermind built with React
 						<a href="/mastermind/">Try it out, its fun!</a>
 					</p>
-
 				</div>
 			</section>
+			<section>
+				<div id="app"></div>
+			</section>
 		</div>
+		<script src="frontpage/frontpage.js"></script>
 	</body>
 </html>

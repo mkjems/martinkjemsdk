@@ -4,7 +4,7 @@ exports.register = function(app) {
 
 	// Handle Frontpage
 	app.get('/', function (req, res) {
-		res.sendFile( path.resolve( __dirname + '/../../client/build/frontpage.html') );
+		res.sendFile( path.resolve( __dirname + '/../../client/build/frontpage/frontpage.html') );
 	});
 
 	// Handle mastermind
