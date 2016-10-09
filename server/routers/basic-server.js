@@ -9,6 +9,6 @@ exports.register = function(app) {
 
 	// Handle 404
 	app.get('*', function (req, res) {
-		res.status('404').sendFile(path.resolve(__dirname + '/../../client-build/static/error/404.html'));
+		res.status('404').sendFile(path.resolve(__dirname + '/../../client/build/error/404.html'));
 	});
 };

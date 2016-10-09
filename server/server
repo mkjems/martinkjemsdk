@@ -23,7 +23,7 @@ require('./routers/website').register(app);
 require('./routers/cartrace').register(app, io);
 
 // Handle all static files
-app.use('/', express.static(path.resolve(__dirname + '/../client-build/static')) );
+app.use('/', express.static(path.resolve(__dirname + '/../client/build')) );
 
 // 404 page etc.
 require('./routers/basic-server').register(app);
@@ -31,7 +31,7 @@ require('./routers/basic-server').register(app);
 // Handle server errors
 app.use(function(err, req, res, next) {
 	console.error(err.stack);
-	res.status(500).sendFile(path.resolve(__dirname + '/../client-build/static/error/500.html'));
+	res.status(500).sendFile(path.resolve(__dirname + '/../client/build/error/500.html'));
 });
 
 // -- Start listening, do some logging when ready --
