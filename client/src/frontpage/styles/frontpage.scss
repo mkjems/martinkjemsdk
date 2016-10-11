@@ -1,13 +1,18 @@
+@import '../../theme/colors.scss';
+@import './burger-menu.scss';
+@import './side-menu.scss';
+@import './illu.scss';
 
 html, body {
-	margin: 0px;
-	padding: 0px;
+
 }
 
 body {
-	background-color: #f3f3f3;
+	background-color: $light-gray;
 	font-family: sans-serif;
+	margin: 0px;
 	margin-bottom: 100px;
+	padding: 0px;
 }
 
 img {
@@ -42,7 +47,7 @@ section {
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	height: 400px;
+	min-height: 400px;
 	background-color: #ffffff;
 	margin-bottom: 10px;
 }
@@ -62,9 +67,43 @@ section {
 	margin-left: 30px;
 }
 
+button.positive {
+	transition: background-color .3s ease-out;
+	background-color: $green;
+	padding: 10px 25px;
+	border: 0;
+	border-radius: 40px;
+	font-size: 15px;
+	&:hover {
+		background-color: $light-green;
+	}
+	&:active {
+		background-color: $dark-green;
+	}
+	&:focus {
+	    outline: none;
+	}
+}
+
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 550px) {
+	section {
+		flex-direction: column;
+	}
+
+	.section-text, .section-illu {
+		text-align: center;
+	}
+
+	.section-text {
+		margin-bottom: 40px;
+	}
+
+	.jumbo-title {
+		font-size: 30px;
+	}
 
 }
 

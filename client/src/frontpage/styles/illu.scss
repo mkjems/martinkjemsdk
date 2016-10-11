@@ -1,0 +1,15 @@
+@import '../../theme/colors.scss';
+
+circle {
+  fill: $light-gray;
+  transition: fill .3s ease-out;
+}
+
+circle:hover {
+  fill: $gray;
+}
+
+.illu-svg {
+	width: 320px;
+	height: 320px;
+}

@@ -12,7 +12,7 @@ const notes = [
 ];
 
 export default () => (
-  <ul>{notes.map(note =>
+  <div><ul>{notes.map(note =>
     <li key={note.id}>{note.task}</li>
-  )}</ul>
+  )}</ul></div>
 )

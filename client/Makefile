@@ -1,16 +1,13 @@
 BUILD = build/
 SRC = src
 
-# CSS_FILES           = $(shell find $(SRC) -type f -name '*.css')
 HTML_FILES          = $(shell find $(SRC) -type f -name '*.html')
 ICO_FILES           = $(shell find $(SRC) -type f -name '*.ico')
 
 D_HTML              = $(addprefix $(BUILD), $(subst src/,,$(HTML_FILES)))
-# D_CSS               = $(addprefix $(BUILD), $(subst src/,,$(CSS_FILES)))
 D_ICO_FILES	 		= $(addprefix $(BUILD), $(subst src/,,$(ICO_FILES)))
 
 copy-html: $(D_HTML)
-# copy-css: $(D_CSS)
 copy-ico: $(D_ICO_FILES)
 
 $(BUILD)%.ico: $(SRC)/%.ico
