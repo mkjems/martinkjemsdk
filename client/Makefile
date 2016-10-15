@@ -44,6 +44,9 @@ webpack-dev-server:
 	./node_modules/webpack-dev-server/bin/webpack-dev-server.js
 
 webpack-dev-server-inline:
+	./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot
+
+webpack-dev-server-inline-hot:
 	./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline
 
 watch-src:

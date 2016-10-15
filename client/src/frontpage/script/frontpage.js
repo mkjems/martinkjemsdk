@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import Restofpage from '../components/rest-of-page';
 import Burgermenu from '../components/burger-menu';
 
-require('../styles/frontpage.scss');
+import '../styles/frontpage.scss';
 
 import {createStore} from 'redux';
 import reducer from './reducer';

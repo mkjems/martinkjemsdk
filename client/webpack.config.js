@@ -5,7 +5,7 @@ module.exports = {
   entry: {
     'frontpage/frontpage': './src/frontpage/script/frontpage.js',
     'cartrace/cartrace': './src/cartrace/cartrace.js',
-    'mastermind/mastermind': './src/mastermind/mastermind.js',
+    'mastermind/mastermind': './src/mastermind/script/mastermind.js',
   },
   output: {
     filename: '[name].js',

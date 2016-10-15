@@ -28,10 +28,6 @@ const Restofpage = (props) => {
                         </p>
                     </div>
                 </section>
-                <section>
-                    <Counter {...props} />
-
-                </section>
             </div>
         </div>
     );

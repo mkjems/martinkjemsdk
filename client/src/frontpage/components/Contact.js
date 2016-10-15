@@ -11,7 +11,7 @@ const Contact = ({onContactClick, showContact}) => {
 		    <div className="section-text">
 		        <h2>Web developer</h2>
 		        {(showContact)
-		        	? <p>Phone: (+45) 51 24 52 65<br /><br /></p>
+		        	? <p>Phone: <a href="tel:(+45) 51 24 52 65">(+45) 51 24 52 65</a><br /><br /></p>
 		        	: <p >Im a web developer with many years of experience</p>
 		        }
 		        <button className="positive" onClick={onContactClick}>Contact information</button>

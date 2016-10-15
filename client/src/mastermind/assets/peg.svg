@@ -1,0 +1,20 @@
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="60.07" height="61.04" viewBox="0 0 212.86 216.29" id="svg2" version="1.1" inkscape:version="0.91" sodipodi:docname="greenpeg.svg">
+  <defs id="defs4"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:zoom="1.4" inkscape:cx="591.1" inkscape:cy="-160.28" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false" inkscape:window-width="2560" inkscape:window-height="1396" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0"/>
+  <metadata id="metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>
+          image/svg+xml
+        </dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-222.85711,-246.64791)">
+    <circle id="path4138" cx="333.57" cy="360.79" r="102.14" style="fill-opacity:0.22;fill:#808080"/>
+    <circle r="102.14" cy="348.79" cx="325" id="circle4140" fill="#28c833"/>
+    <circle id="path4142" cx="293.07" cy="306.86" r="10.36" style="fill-opacity:0.55;fill:#fff"/>
+    <path d="m230.16 388.2a102.14 102.14 0 0 0 94.13 62.74 102.14 102.14 0 0 0 102.14-102.14 102.14 102.14 0 0 0-31.58-73.69 102.14 102.14 0 0 1 1.07 2.39 102.14 102.14 0 0 1 3.22 9.69 102.14 102.14 0 0 1 2.24 9.96 102.14 102.14 0 0 1 1.23 10.14 102.14 102.14 0 0 1 0.26 7.22 102.14 102.14 0 0 1-0.51 10.2 102.14 102.14 0 0 1-1.53 10.1 102.14 102.14 0 0 1-2.53 9.89 102.14 102.14 0 0 1-3.5 9.59 102.14 102.14 0 0 1-4.44 9.19 102.14 102.14 0 0 1-5.34 8.7 102.14 102.14 0 0 1-6.18 8.13 102.14 102.14 0 0 1-6.96 7.47 102.14 102.14 0 0 1-7.67 6.74 102.14 102.14 0 0 1-8.3 5.94 102.14 102.14 0 0 1-8.86 5.08 102.14 102.14 0 0 1-9.32 4.17 102.14 102.14 0 0 1-9.69 3.22 102.14 102.14 0 0 1-9.96 2.23 102.14 102.14 0 0 1-10.14 1.23 102.14 102.14 0 0 1-7.22 0.26 102.14 102.14 0 0 1-10.2-0.51 102.14 102.14 0 0 1-10.1-1.53 102.14 102.14 0 0 1-9.89-2.53 102.14 102.14 0 0 1-9.59-3.5 102.14 102.14 0 0 1-9.19-4.44 102.14 102.14 0 0 1-8.7-5.34 102.14 102.14 0 0 1-8.13-6.18 102.14 102.14 0 0 1-4.76-4.43z" id="path4149" inkscape:connector-curvature="0" style="fill-opacity:0.15;fill:#20a029"/>
+  </g>
+</svg>
