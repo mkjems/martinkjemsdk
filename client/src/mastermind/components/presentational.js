@@ -6,15 +6,15 @@ import {COLORS, SIDEWAYS_COLORS, TOP_VIEW_COLORS} from '../script/constants.js'
 import Hole from './Hole.js';
 import PegIllu from './Peg.js';
 import Pegsideways from './Pegsideways.js';
+import SmallFeedbackPeg from './SmallFeedbackPeg.js';
+import SmallFeedbackHole from './SmallFeedbackHole.js';
 
 const FeedbackPeg = ({pegType="none"}) => {
 	return (
 		<div className="feedback-item">
-			<svg width="40px" height="40px">
-   				{pegType==='red' ? (<circle cx="20" cy="20" r="10" strokeWidth="0" fill="#c85825" />):null}
-   				{pegType==='white' ? (<circle cx="20" cy="20" r="10" strokeWidth="0" fill="#eee" />):null}
-   				{pegType==='none' ? (<circle cx="20" cy="20" r="4" strokeWidth="0" fill="#333" />):null}
-   			</svg>
+			{pegType==='red' ? (<SmallFeedbackPeg type="red" />):null}
+			{pegType==='white' ? (<SmallFeedbackPeg type="white" />):null}
+			{pegType==='none' ? (<SmallFeedbackHole />):null}
 	   	</div>
 	)
 };
@@ -28,15 +28,6 @@ const Feedback = ({feedbackPegs}) => {
 		</div>
 	)
 };
-
-const Circle = ({peg}) => {
-	const radius = (peg !== 'none') ? 30 : 10;
-	return (
-		<svg >
-			<circle cx="50" cy="50" r={radius} strokeWidth="0" fill={COLORS[peg]} />
-		</svg>
-	);
-}
 
 
 const Peg = ({id, peg, onPegClick}) => {
