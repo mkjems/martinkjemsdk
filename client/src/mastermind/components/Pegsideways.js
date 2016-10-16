@@ -3,7 +3,7 @@ import React from 'react';
 const Pegsideways = ({colors}) => {
 
 	return (
-		<svg viewBox="0 0 99.828297 114.93159" width="106.483" height="122.593" className="sidePeg">
+		<svg viewBox="0 0 99.828297 114.93159" className="sidePeg">
 			<g transform="translate(-37.84 -859.206)">
 				<path d="M71.116 900.59h33.276v73.547H71.116z" fill={colors.stem}/>
 				<path d="M86.67 908.108h17.622v65.863H86.67z" fill={colors.self_shadow}/>

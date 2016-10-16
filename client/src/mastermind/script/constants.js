@@ -26,18 +26,21 @@ export const COLORS = {
 	select: "#666666",
 }
 
-export const BOARD_START = [
-	{
-		pegs: ['select', 'select', 'select','select'],
-		feedback : ['none', 'none', 'none', 'none']
-	},{
-		pegs: ['none', 'none', 'none','none'],
-		feedback : ['none', 'none', 'none', 'none']
-	},{
-		pegs: ['none', 'none', 'none','none'],
-		feedback : ['none', 'none', 'none', 'none']
-	}
-];
+
+const first_row = [{
+	pegs: ['select', 'select', 'select','select'],
+	feedback : ['none', 'none', 'none', 'none']
+}];
+
+const empty_row = {
+	pegs: ['none', 'none', 'none','none'],
+	feedback : ['none', 'none', 'none', 'none']
+};
+
+const empty_rows = new Array(12).fill(empty_row);
+
+export const BOARD_START = [...first_row, ...empty_rows];
+
 
 export const ROW_START = {
 	pegs: ['none', 'none', 'none','none'],

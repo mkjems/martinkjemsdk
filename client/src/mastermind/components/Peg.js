@@ -3,7 +3,7 @@ import React from 'react';
 const PegIllu = ({type='svg-hole-normal', colors} ) => {
 
     return (
-        <svg viewBox="0 0 224.28572 224.28572" height="100" width="100" className="pegIllu">
+        <svg viewBox="0 0 224.28572 224.28572" className="pegIllu">
             <g transform="translate(-212.857 -236.648)">
                 <circle cx="325" cy="348.791" r="102.143" fill={colors.hat}/>
                 <circle r="10.357" cy="305.791" cx="290.929" fill={colors.highlight} fillOpacity=".554"/>

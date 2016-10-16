@@ -34,6 +34,7 @@
     "lodash.compact": "^3.0.1",
     "lodash.includes": "^4.3.0",
     "lodash.intersection": "^4.4.0",
+    "lodash.isequal": "^4.4.0",
     "lodash.map": "^4.6.0",
     "react": "^15.3.2",
     "react-burger-menu": "^1.10.7",
