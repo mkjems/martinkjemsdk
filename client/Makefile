@@ -29,7 +29,7 @@ $(BUILD)%.css: $(SRC)/%.css
 clean:
 	rm -rf $(BUILD)*
 
-build: copy-html copy-ico
+build: copy-html copy-ico webpack-build
 
 webpack-build:
 	./node_modules/webpack/bin/webpack.js
