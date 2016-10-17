@@ -37,7 +37,7 @@ const empty_row = {
 	feedback : ['none', 'none', 'none', 'none']
 };
 
-const empty_rows = new Array(12).fill(empty_row);
+const empty_rows = new Array(9).fill(empty_row);
 
 export const BOARD_START = [...first_row, ...empty_rows];
 

@@ -5,8 +5,9 @@ import {createStore} from 'redux';
 import reducer from './reducers';
 import './style/mastermind.scss';
 import App from './script/App'
+import { loadState, saveState } from './script/localStorage'
 
-const store = createStore(reducer)
+const store = createStore(reducer, loadState())
 
 const renderFunc = () => {
     render(<App dispatch={store.dispatch} getState={store.getState} />, document.getElementById('app') );
@@ -14,6 +15,10 @@ const renderFunc = () => {
 
 store.subscribe(renderFunc)
 
-store.dispatch({
-	type: 'BEGIN_NEW_GAME'
-})
+store.subscribe(()=>{
+	saveState(store.getState());
+});
+
+renderFunc();
+store.dispatch({type:'BEGIN_NEW_GAME'})
+

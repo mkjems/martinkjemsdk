@@ -14,7 +14,6 @@ const Restofpage = (props) => {
                 </div>
             </header>
             <div className="container">
-                <Contact {...props} />
                 <section className="sec_02">
                     <div className="section-illu">
                         <Iconmastermind className='illu-svg' />
@@ -24,10 +23,11 @@ const Restofpage = (props) => {
                         <p>
                             I like to play arround with web technologies.<br />
                             This is a version of the old classic: Mastermind built with React.&nbsp;
-                            <a href="/mastermind/">Try it out, its fun!</a>
+                            <a href="/mastermind/">Try it, its fun!</a>
                         </p>
                     </div>
                 </section>
+                <Contact {...props} />
             </div>
         </div>
     );

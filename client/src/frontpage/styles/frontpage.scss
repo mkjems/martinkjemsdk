@@ -3,6 +3,14 @@
 @import './side-menu.scss';
 @import './illu.scss';
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 html, body {
 
 }
@@ -108,6 +116,14 @@ button.positive {
 	.bm-burger-button {
 		width: 20px;
 		height: 20px;
+	}
+
+	.section-illu {
+		margin-left: 0px;
+	}
+
+	.illu-svg {
+		margin-top: 30px;
 	}
 
 }

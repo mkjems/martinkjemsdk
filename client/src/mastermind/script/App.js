@@ -7,7 +7,7 @@ import {onPegClick, onChooseColor, onBeginNewRow} from '../actions';
 class App extends React.Component {
 	render() {
 		const {dispatch, getState} = this.props;
-	 	const {board, showColorpicker, activeRow} = getState();
+	 	const {board, showColorpicker, activeRow, selectedPeg} = getState();
 
 	 	const remaining = board[activeRow].pegs.filter((val)=>{
 	 		return (val =='select' || val == 'none');
@@ -20,6 +20,7 @@ class App extends React.Component {
 	 		board,
 	 		showColorpicker,
 	 		activeRow,
+	 		selectedPeg,
 	 		onPegClick: (id) => {
 	 			dispatch(onPegClick(id));
 	 		},
