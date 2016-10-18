@@ -62,7 +62,8 @@ echo "**********************************************"
 
 cd /vagrant/client
 sudo npm rebuild node-sass
-sudo npm install -g react-tools
+# sudo npm install -g react-tools
+npm install
 make build
 
 echo "**********************************************"
