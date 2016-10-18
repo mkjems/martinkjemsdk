@@ -1,6 +1,6 @@
 import React from 'react';
 import Gameplay from '../components/presentational';
-import Header from '../components/header';
+import Header from '../components/Header';
 
 import {
 	onPegClick,
