@@ -20,6 +20,12 @@ const boardReducer = (state=BOARD_START, action, activeRow, selectedPeg, secretC
 			return state.map((row, index) => {
 				return rowReducer(row, Object.assign({},betterAction,{isActiveRow: (index === activeRow)}));
 			});
+		case 'RESET_GAME':
+			return BOARD_START;
+		case 'GIVE_FEEDBACK':
+			return state.map((row, index) => {
+				return rowReducer(row, Object.assign({},betterAction,{isActiveRow: (index === activeRow)}));
+			});
 		default:
 			return state
 	}

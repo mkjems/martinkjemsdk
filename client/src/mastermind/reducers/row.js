@@ -25,40 +25,69 @@ function calculateFeedback(secret, answer) {
 	return [...reds_arr, ...whites_arr, ...none_arr];
 }
 
-const rowReducer = (state=ROW_START, action) => {
+const PEGS_START = ['none', 'none', 'none','none'];
+const FEEDBACK_START = ['none', 'none', 'none', 'none'];
 
+const pegsReducer = (state=PEGS_START, action) => {
 	switch (action.type) {
 		case 'BEGIN_NEW_ROW':
-			if(action.isActiveRow && isEqual(['none', 'none', 'none', 'none'], state.pegs)) {
-				return {
-					pegs: ['select', 'select', 'select', 'select'],
-					feedback: state.feedback
-				};
+			if(action.makeSelectable) {
+				return ['select', 'select', 'select', 'select'];
 			}
 			return state;
 		case 'CHOSE_THIS_COLOR':
 			if(action.isActiveRow) {
 				const pegs = [
-					...state.pegs.slice(0, action.selectedPeg),
+					...state.slice(0, action.selectedPeg),
 					action.name,
-					...state.pegs.slice(action.selectedPeg+1)
+					...state.slice(action.selectedPeg+1)
 				];
-
-				const remaining = pegs.filter((val)=>{
-					return val == 'select';
-				})
-
-				if (remaining.length === 0){
-					var feedback = calculateFeedback(action.secretCode, pegs);
-				} else {
-					var feedback = state.feedback;
-				}
-				return {
-					pegs: pegs,
-					feedback: feedback
-				}
+				return pegs;
 			}
 			return state;
+		default:
+			return state;
+	}
+};
+
+const feedbackReducer = (state=FEEDBACK_START, action, pegs) => {
+	switch (action.type) {
+		case 'GIVE_FEEDBACK':
+			if(action.isActiveRow) {
+				return calculateFeedback(action.secretCode, pegs);
+			}
+			return state;
+		default:
+			return state;
+	}
+};
+
+const rowReducer = (state=ROW_START, action) => {
+
+	switch (action.type) {
+		case 'BEGIN_NEW_ROW':
+			let betterAction;
+			if(action.isActiveRow && isEqual(['none', 'none', 'none', 'none'], state.pegs)) {
+				betterAction = Object.assign({}, action, {makeSelectable:true})
+			} else {
+				betterAction = action;
+			}
+			return {
+				pegs: pegsReducer(state.pegs, betterAction),
+				feedback: feedbackReducer(state.feedback, betterAction, state.pegs)
+			};
+
+			return state;
+		case 'CHOSE_THIS_COLOR':
+			return {
+				pegs: pegsReducer(state.pegs, action),
+				feedback: feedbackReducer(state.feedback, action)
+			}
+		case 'GIVE_FEEDBACK':
+			return {
+				pegs: state.pegs,
+				feedback: feedbackReducer(state.feedback, action, state.pegs)
+			}
 		default:
 			return state
 	}

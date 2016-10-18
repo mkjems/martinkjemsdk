@@ -4,7 +4,7 @@ const Header = ({onNewGame}) => {
 	return (
 		<div className="top">
 			<h2>Mastermind</h2>
-			<button onClick={onNewGame}>New game</button>
+			<button onClick={onNewGame}>Reset game</button>
 		</div>
 	)
 }

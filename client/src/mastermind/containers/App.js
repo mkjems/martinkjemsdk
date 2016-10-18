@@ -6,7 +6,10 @@ import {
 	onPegClick,
 	onChooseColor,
 	onBeginNewRow,
-	onNewGame
+	onEnterRow,
+	onGiveFeedback,
+	onAdvanceSelector,
+	resetGame
 } from '../actions';
 
 class App extends React.Component {
@@ -17,11 +20,9 @@ class App extends React.Component {
 	 	const remaining = board[activeRow].pegs.filter((val)=>{
 	 		return (val =='select' || val == 'none');
 	 	}).length;
-	 	if(remaining == 0){
-	 		dispatch(onBeginNewRow());
-	 	}
 
 	 	const props = {
+	 		isCompleteRow: (remaining === 0),
 	 		board,
 	 		showColorpicker,
 	 		activeRow,
@@ -31,10 +32,15 @@ class App extends React.Component {
 	 		},
 	 		onChooseColor: (name) => {
 	 			dispatch(onChooseColor(name));
+	 			dispatch(onAdvanceSelector());
+	 		}, onEnterRow: () => {
+	 			dispatch(onGiveFeedback());
+	 			dispatch(onEnterRow());
+	 			dispatch(onBeginNewRow());
 	 		}
 	 	}
 	 	const onNewGame = () => {
-	 		dispatch(onNewGame());
+	 		dispatch(resetGame());
 	 	}
 		return (
 			<div>
