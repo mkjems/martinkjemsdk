@@ -5,8 +5,12 @@ echo "I am starting provisioning "
 echo $1
 echo "**********************************************"
 
-# Write system description
-# lsb_release -a
+echo '>>> Creating swapfile'
+sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
 
 echo "**********************************************"
 echo "Set some localisation "

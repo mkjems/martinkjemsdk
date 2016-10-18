@@ -1,5 +1,6 @@
 {
   "name": "martins-website",
+  "license" : "BSD-3-Clause",
   "version": "1.0.0",
   "description": "My personal web experiments",
   "author":{
