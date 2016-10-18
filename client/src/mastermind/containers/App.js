@@ -2,7 +2,12 @@ import React from 'react';
 import Gameplay from '../components/presentational';
 import Header from '../components/header';
 
-import {onPegClick, onChooseColor, onBeginNewRow} from '../actions';
+import {
+	onPegClick,
+	onChooseColor,
+	onBeginNewRow,
+	onNewGame
+} from '../actions';
 
 class App extends React.Component {
 	render() {
@@ -28,9 +33,12 @@ class App extends React.Component {
 	 			dispatch(onChooseColor(name));
 	 		}
 	 	}
+	 	const onNewGame = () => {
+	 		dispatch(onNewGame());
+	 	}
 		return (
 			<div>
-				<Header />
+				<Header onNewGame={onNewGame}/>
 				<Gameplay {...props} />
 			</div>
 		)

@@ -4,8 +4,8 @@ import {createStore} from 'redux';
 
 import reducer from './reducers';
 import './style/mastermind.scss';
-import App from './script/App'
-import { loadState, saveState } from './script/localStorage'
+import App from './containers/App';
+import { loadState, saveState } from './script/localStorage';
 
 const store = createStore(reducer, loadState())
 
@@ -20,5 +20,4 @@ store.subscribe(()=>{
 });
 
 renderFunc();
-store.dispatch({type:'BEGIN_NEW_GAME'})
 

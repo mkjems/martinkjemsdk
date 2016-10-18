@@ -13,3 +13,13 @@ export const onBeginNewRow = () => ({
 	type: 'BEGIN_NEW_ROW',
 	name
 });
+
+export const onNewGame = () => ({
+	type: 'RESET_GAME',
+	name
+});
+
+export const beginNewGame = () => ({
+	type: 'BEGIN_NEW_GAME',
+	name
+});

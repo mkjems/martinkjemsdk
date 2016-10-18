@@ -15,7 +15,7 @@ const reducer = (state = {}, action) => {
 	const board = boardReducer(state.board, action, activeRow, selectedPeg, secretCode);
 	const showColorpicker = showColorsReducer(state.showColorpicker, action);
 
-	const res =  {
+	const newState =  {
 		selectedPeg,
 		activeRow,
 		board,
@@ -23,9 +23,9 @@ const reducer = (state = {}, action) => {
 		showColorpicker
 	};
 
-	console.log('STATE:',res);
+	console.log('STATE:',newState);
 	console.log('*********************************************************')
-	return res;
+	return newState;
 }
 
 export default reducer;

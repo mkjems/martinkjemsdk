@@ -8,6 +8,8 @@ import {intersection, includes, compact} from 'lodash';
 var isEqual = require('lodash.isequal');
 
 function calculateFeedback(secret, answer) {
+	console.log('feedback', secret, answer);
+
 	const num_reds_arr = secret.map((val, index) => {
 		return val == answer[index];
 	});
@@ -24,6 +26,7 @@ function calculateFeedback(secret, answer) {
 }
 
 const rowReducer = (state=ROW_START, action) => {
+
 	switch (action.type) {
 		case 'BEGIN_NEW_ROW':
 			if(action.isActiveRow && isEqual(['none', 'none', 'none', 'none'], state.pegs)) {
