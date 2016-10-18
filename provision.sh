@@ -61,6 +61,7 @@ echo "Build client website"
 echo "**********************************************"
 
 cd /vagrant/client
+sudo npm rebuild node-sass
 sudo npm install -g react-tools
 make build
 
