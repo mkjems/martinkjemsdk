@@ -6,7 +6,6 @@ export const loadState  = () => {
 			return undefined;
 		}
 		const res = JSON.parse(serializedState);
-		console.log('serialized', res);
 		return res;
 	} catch (err){
 		return undefined;
@@ -19,5 +18,13 @@ export const saveState = (state) => {
 		localStorage.setItem('state', serializedState);
 	} catch (err) {
 		cosole.log('error retrieving state');
+	}
+}
+
+export const clearState = () => {
+	try {
+		localStorage.removeItem('state');
+	} catch (err) {
+		cosole.log('error clearing state');
 	}
 }

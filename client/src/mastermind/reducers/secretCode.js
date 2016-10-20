@@ -19,6 +19,8 @@ const secretCodeReducer = (state=createSecretCode(), action) => {
 	switch (action.type) {
 		case 'RESET_GAME':
 			return createSecretCode();
+		case 'RANDOMIZE_SECRET_CODE':
+			return createSecretCode();
 		default:
 			return state
 	}

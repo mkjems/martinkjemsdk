@@ -3,12 +3,16 @@ export const onPegClick = (id) => ({
 	id
 });
 
+export const hideColorPicker = () => ({
+	type: 'HIDE_COLOR_PICKER'
+});
+
 export const onChooseColor = (name) => ({
 	type: 'CHOSE_THIS_COLOR',
 	name
 });
 
-export const onBeginNewRow = () => ({
+export const beginNewRow = () => ({
 	type: 'BEGIN_NEW_ROW'
 });
 
@@ -20,14 +24,47 @@ export const beginNewGame = () => ({
 	type: 'BEGIN_NEW_GAME'
 });
 
-export const onEnterRow = () => ({
-	type: 'ENTER_ROW'
-});
-
-export const onGiveFeedback = () => ({
+export const giveFeedback = () => ({
 	type: 'GIVE_FEEDBACK'
 });
 
 export const onAdvanceSelector = () => ({
 	type: 'ADVANCE_SELECTOR'
+});
+
+export const onHideSecretCode = () => ({
+	type: 'HIDE_SECRET_CODE'
+});
+
+export const revealSecretCode = () => ({
+	type: 'REVEAL_SECRET_CODE'
+});
+
+export const onToggleSecretCode = () => ({
+	type: 'TOGGLE_SECRET_CODE'
+});
+
+export const randomizeCode = () => ({
+	type: 'RANDOMIZE_SECRET_CODE'
 })
+
+export const gameBegin = () => ({
+	type: 'GAME_BEGIN'
+})
+
+export const gameWin = () => ({
+	type: 'GAME_WIN'
+});
+
+export const gameLoose = () => ({
+	type: 'GAME_LOOSE'
+});
+
+export const gameGiveUp = () => ({
+	type: 'GAME_GIVE_UP'
+});
+export const gameIntro = () => ({
+	type: 'GAME_INTRO'
+});
+
+

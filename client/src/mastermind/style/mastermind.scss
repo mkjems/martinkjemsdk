@@ -26,14 +26,16 @@ div {
 
 .top {
 	text-align: center;
+	margin-bottom:30px;
 }
-
 
 .board {
 	background-color: rgb(0,0,0);
 	width: 375px;
 	margin: 0 auto;
 }
+
+
 
 .board-row {
 	display: flex;
@@ -45,6 +47,10 @@ div {
 	display: flex;
 	justify-content: center;
 	width:20%;
+}
+
+.peg__secret {
+	width: 25%;
 }
 
 .peg-image {
@@ -71,12 +77,7 @@ div {
 	align-items: center;
 }
 
-.hidden-row {
-	display: flex;
-	flex-direction: row;
-	margin: 5px;
-	height: 100px;
-}
+
 
 .svg-hole {
 	width: 20%;
@@ -180,6 +181,35 @@ div {
 .showPointer {
 	cursor:pointer;
 }
+
+.hidden-row {
+	display: flex;
+	margin: 5px;
+	height: 52px;
+
+}
+
+.cover {
+	/*border: solid 1px #6d6d6d;*/
+	border-radius: 50px;
+	position: relative;
+}
+
+.cover-slider {
+	position: absolute;
+	bottom: 10px;
+	height: 0px;
+	right: 20px;
+	width: 265px;
+	background-color: #000;
+	opacity: 1;
+	-webkit-transition: height 1.5s;
+}
+
+.cover-slider_closed {
+	height: 40px;
+}
+
 @media screen and (max-width: 550px) {
 	.board {
 		width: 300px;
@@ -202,4 +232,8 @@ div {
 		width: 25%;
 	}
 
+}
+
+.board__secret {
+	margin-bottom: 14px;
 }

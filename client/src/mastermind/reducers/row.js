@@ -8,8 +8,6 @@ import {intersection, includes, compact} from 'lodash';
 var isEqual = require('lodash.isequal');
 
 function calculateFeedback(secret, answer) {
-	console.log('feedback', secret, answer);
-
 	const num_reds_arr = secret.map((val, index) => {
 		return val == answer[index];
 	});

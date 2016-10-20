@@ -1,10 +1,9 @@
 import React from 'react';
 
-const Header = ({onNewGame}) => {
+const Header = ({onStartGame, onGiveUp}) => {
 	return (
 		<div className="top">
-			<h2>Mastermind</h2>
-			<button onClick={onNewGame}>Reset game</button>
+			<button onClick={onGiveUp}>Give up</button>
 		</div>
 	)
 }
