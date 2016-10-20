@@ -7,7 +7,7 @@ const Gameplay = (props) => {
     const {board, activeRow, secretCode, isCodeHidden} = props;
     return (
         <div>
-            <Hiddencode secretCode={secretCode} isCodeHidden={isCodeHidden}/>
+            <Hiddencode {...props}/>
             {board.map((row, index)=>{
                 return <Boardrow  key={index} rowindex={index} pegs={row.pegs} isActiveRow={(activeRow===index)} feedbackPegs={row.feedback} {...props}/>;
             })}

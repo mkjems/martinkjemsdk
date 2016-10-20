@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 
-
 const Gaveup = ({onResetAll, rowindex}) => {
 	return (
 		<div className={classNames('board', 'statusMessages')}>

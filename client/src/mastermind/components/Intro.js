@@ -8,7 +8,7 @@ const Rules = () => {
         <div>
             <p>The aim of the game is to guess a secret code of 4 colors.</p>
             <div className="intro-explain">
-                {['yellow', 'red'].map((val, index)=>{
+                {['yellow', 'green', 'blue', 'pink'].map((val, index)=>{
                     return <Peg key={index} id={index} peg={val} />
                 })}
             </div>

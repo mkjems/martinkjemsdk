@@ -1,6 +1,5 @@
 import React from 'react';
 import Gameplay from '../components/Gameplay';
-import Header from '../components/Header';
 import Intro from '../components/Intro';
 
 import { clearState } from '../script/localStorage';
@@ -77,6 +76,10 @@ var App  = React.createClass({
 	 			dispatch(gameIntro());
 	 			dispatch(resetGame());
 	 			clearState();
+	 		},
+	 		onGiveUp: () => {
+	 			dispatch(revealSecretCode());
+	 			dispatch(gameGiveUp());
 	 		}
 	 	}
 	 	const onReset = () => {
@@ -112,14 +115,9 @@ var App  = React.createClass({
  		const onToggleRules = () => {
  			dispatch(toggleRules());
  		}
- 		const onGiveUp = () => {
- 			console.log('you gave up');
- 			dispatch(revealSecretCode());
- 			dispatch(gameGiveUp());
- 		}
+
 		return (
 			<div>
-				{(gameStatus!='intro') ? <Header onStartGame={onStartGame} onGiveUp={onGiveUp} />: null}
 				{(gameStatus!='intro') ? <Gameplay {...props} /> : null}
 				{(gameStatus=='intro') ? <Intro isRulesHidden={isRulesHidden} onToggleRules={onToggleRules} onStartGame={onStartGame} /> : null}
 			</div>

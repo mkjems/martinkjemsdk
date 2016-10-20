@@ -147,6 +147,7 @@ div {
 	justify-content:center;
 	width: 400px;
 	margin: 0 auto;
+	cursor:pointer;
 }
 .picker-color {
 	width: 48px;
@@ -199,8 +200,8 @@ div {
 	position: absolute;
 	bottom: 0px;
 	height: 0px;
-	right: 0px;
-	width: 100%;
+	left: 0px;
+	width: 75%;
 	background-color: #000;
 	opacity: 1;
 	-webkit-transition: height 1.5s;
@@ -208,6 +209,11 @@ div {
 
 .cover-slider_closed {
 	height: 100%;
+}
+
+.cover-giveup {
+	align-items: center;
+	cursor:pointer;
 }
 
 .statusMessages {
@@ -235,6 +241,7 @@ div {
 	.picker-color {
 		width: 40px;
 		margin: 10px;
+		cursor:pointer;
 	}
 
 	.svg-feedback-hole {
@@ -245,6 +252,6 @@ div {
 
 .board__secret {
 	margin-bottom: 14px;
-	border: solid 0px #aaa;
+	border: solid 0px #777;
 	border-bottom-width: 1px;
 }
