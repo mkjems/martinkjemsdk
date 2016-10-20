@@ -84,7 +84,7 @@ div {
 }
 
 .svg-hole-animation {
-	animation: pulse 1.5s infinite;
+	animation: pulse 1.8s infinite;
 	animation-direction: alternate-reverse;
 	animation-timing-function: linear;
 	cursor:pointer;
@@ -112,7 +112,7 @@ div {
 
 @keyframes pulse {
   0% {
-    fill:#777;
+    fill:#bbb;
   }
   100% {
     fill:#222;
@@ -212,6 +212,7 @@ div {
 }
 
 .cover-giveup {
+	color: #8a8a8a;
 	align-items: center;
 	cursor:pointer;
 }
