@@ -1,9 +1,11 @@
 import React from 'react';
+import classNames from 'classnames';
 
-const Gaveup = ({onResetAll}) => {
+
+const Gaveup = ({onResetAll, rowindex}) => {
 	return (
-		<div className="board">
-			You gave up
+		<div className={classNames('board', 'statusMessages')}>
+			<p>You gave up after {rowindex} attempts.</p>
 			<button onClick={onResetAll}>Ok</button>
 		</div>
 	)

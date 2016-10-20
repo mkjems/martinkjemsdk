@@ -7,39 +7,25 @@ import Won from './Won';
 import Lost from './Lost';
 import Colorpicker from './Colorpicker';
 
-
-const Boardrow = ({
-    isCompleteRow,
-    onChooseColor,
-    onPegClick,
-    onSubmitRow,
-    isActiveRow,
-    showColorpicker,
-    rowindex,
-    activeRow,
-    pegs,
-    feedbackPegs,
-    selectedPeg,
-    gameStatus,
-    onResetAll
-}) => {
+const Boardrow = (props) => {
+    const {isActiveRow, onPegClick, rowindex, gameStatus, showColorpicker, pegs, selectedPeg} = props;
     return (
     <div>
-        {(activeRow == rowindex && gameStatus=='gave_up') ? <Gaveup onResetAll={onResetAll}/> : null}
+        {(isActiveRow && gameStatus=='gave_up') ? <Gaveup {...props} /> : null}
         <div className="board">
             <div className="board-row">
                 {pegs.map((val,index) => {
-                    const isSelected = ( (activeRow == rowindex) && (selectedPeg == index) );
+                    const isSelected = ( isActiveRow && (selectedPeg == index) );
                     return (
                         <Peg isSelected={isSelected} key={index} id={index} peg={val} onPegClick={isActiveRow ? onPegClick: ()=>{}} />
                     );
                 })}
-                <Feedback feedbackPegs={feedbackPegs} />
+                <Feedback {...props} />
             </div>
         </div>
-        {(activeRow == rowindex && showColorpicker) ? <Colorpicker isCompleteRow={isCompleteRow} onSubmitRow={onSubmitRow} onChooseColor={onChooseColor} />:null }
-        {(activeRow == rowindex && gameStatus=='won') ? <Won onResetAll={onResetAll}/> : null}
-        {(activeRow == rowindex && gameStatus=='lost') ? <Lost onResetAll={onResetAll}/> : null}
+        {(isActiveRow && showColorpicker) ? <Colorpicker {...props} />:null }
+        {(isActiveRow && gameStatus=='won') ? <Won {...props} /> : null}
+        {(isActiveRow && gameStatus=='lost') ? <Lost {...props} /> : null}
     </div>
     );
 };

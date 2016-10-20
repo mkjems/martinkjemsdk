@@ -21,7 +21,8 @@ import {
 	revealSecretCode,
 	onToggleSecretCode,
 	randomizeCode,
-	gameIntro
+	gameIntro,
+	toggleRules
 } from '../actions';
 
 import {NUM_ROWS} from '../script/constants';
@@ -30,7 +31,7 @@ var App  = React.createClass({
 
 	render: function(){
 		const {dispatch, getState} = this.props;
-	 	const {board, showColorpicker, activeRow, selectedPeg, secretCode, isCodeHidden, gameStatus} = getState();
+	 	const {board, showColorpicker, activeRow, selectedPeg, secretCode, isCodeHidden, gameStatus, isRulesHidden} = getState();
 
 	 	const remaining = board[activeRow].pegs.filter((val)=>{
 	 		return (val =='select' || val == 'none');
@@ -108,6 +109,9 @@ var App  = React.createClass({
 			counter();
 			dispatch(gameBegin());
  		}
+ 		const onToggleRules = () => {
+ 			dispatch(toggleRules());
+ 		}
  		const onGiveUp = () => {
  			console.log('you gave up');
  			dispatch(revealSecretCode());
@@ -117,7 +121,7 @@ var App  = React.createClass({
 			<div>
 				{(gameStatus!='intro') ? <Header onStartGame={onStartGame} onGiveUp={onGiveUp} />: null}
 				{(gameStatus!='intro') ? <Gameplay {...props} /> : null}
-				{(gameStatus=='intro') ? <Intro onStartGame={onStartGame} /> : null}
+				{(gameStatus=='intro') ? <Intro isRulesHidden={isRulesHidden} onToggleRules={onToggleRules} onStartGame={onStartGame} /> : null}
 			</div>
 		)
 	}

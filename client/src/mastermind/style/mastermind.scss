@@ -197,17 +197,26 @@ div {
 
 .cover-slider {
 	position: absolute;
-	bottom: 10px;
+	bottom: 0px;
 	height: 0px;
-	right: 20px;
-	width: 265px;
+	right: 0px;
+	width: 100%;
 	background-color: #000;
 	opacity: 1;
 	-webkit-transition: height 1.5s;
 }
 
 .cover-slider_closed {
-	height: 40px;
+	height: 100%;
+}
+
+.statusMessages {
+	text-align: center;
+}
+
+.intro-explain {
+	display: flex;
+	height: 58px;
 }
 
 @media screen and (max-width: 550px) {
@@ -236,4 +245,6 @@ div {
 
 .board__secret {
 	margin-bottom: 14px;
+	border: solid 0px #aaa;
+	border-bottom-width: 1px;
 }

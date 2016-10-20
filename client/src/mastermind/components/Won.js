@@ -1,9 +1,13 @@
 import React from 'react';
+import classNames from 'classnames';
 
-const Won = ({onResetAll}) => {
+
+const Won = ({onResetAll, activeRow}) => {
 	return (
-		<div className="board">
-			You solved the secret code !
+		<div className={classNames('board', 'statusMessages')}>
+			<p>
+				You solved the secret code in {(activeRow-1)} attempts!
+			</p>
 			<button onClick={onResetAll}>Ok</button>
 		</div>
 	)

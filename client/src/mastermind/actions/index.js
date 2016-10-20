@@ -67,4 +67,8 @@ export const gameIntro = () => ({
 	type: 'GAME_INTRO'
 });
 
+export const toggleRules = () => ({
+	type: 'TOGGLE_RULES'
+});
+
 
