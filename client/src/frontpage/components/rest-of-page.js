@@ -22,8 +22,8 @@ const Restofpage = (props) => {
                         <h2>Play Mastermind</h2>
                         <p>
                             I like to play arround with web technologies.<br />
-                            This is a version of the old classic: Mastermind built with React.&nbsp;
-                            <a href="/mastermind/">Try it, its fun!</a>
+                            This is a version of the old classic, Mastermind.<br />
+                            It's built with React.&nbsp;<a href="/mastermind/">Try it out!</a>
                         </p>
                     </div>
                 </section>

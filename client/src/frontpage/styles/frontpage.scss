@@ -55,7 +55,6 @@ section {
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	min-height: 400px;
 	background-color: #ffffff;
 	margin-bottom: 10px;
 }
@@ -68,11 +67,18 @@ section {
 
 .section-text {
 	max-width: 350px;
-	margin-left: 30px;
+	width: 65%;
+	margin: 0 30px;
 }
 
 .section-illu {
 	margin-left: 30px;
+	width: 35%;
+}
+
+.illu-svg {
+	margin: 20px 0;
+	width: 100%;
 }
 
 button.positive {
@@ -107,6 +113,7 @@ button.positive {
 
 	.section-text {
 		margin-bottom: 40px;
+		width: 100%;
 	}
 
 	.jumbo-title {
@@ -120,6 +127,7 @@ button.positive {
 
 	.section-illu {
 		margin-left: 0px;
+		width: 100%;
 	}
 
 	.illu-svg {

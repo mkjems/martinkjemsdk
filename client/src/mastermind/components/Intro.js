@@ -31,6 +31,7 @@ const Rules = () => {
 const Intro = ({onStartGame, onToggleRules, isRulesHidden})=> {
     return (
         <div className="board" >
+            <br /><a href="/">Home</a>
             <h1>Mastermind</h1>
             <button onClick={onStartGame}>Start game</button>&nbsp;
             <button onClick={onToggleRules}>

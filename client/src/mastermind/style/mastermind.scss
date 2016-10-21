@@ -15,6 +15,18 @@ body {
     margin-bottom: 100px;
 }
 
+a {
+    &:link {
+        color: #fff;
+    }
+    &:hover {
+        color: #aaa;
+    }
+    &:visited {
+        color: #fff;
+    }
+}
+
 div {
     padding: 0px;
     margin: 0px;
@@ -261,7 +273,6 @@ button {
 }
 
 .board__secret {
-    margin-bottom: 14px;
+    margin: 14px auto;
     border: solid 0px #777;
-    border-bottom-width: 1px;
 }
