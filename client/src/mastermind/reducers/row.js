@@ -28,6 +28,13 @@ const FEEDBACK_START = ['none', 'none', 'none', 'none'];
 
 const pegsReducer = (state=PEGS_START, action) => {
 	switch (action.type) {
+		case 'GAME_GIVE_UP':
+			return state.map((val)=>{
+				if(val !='select' && val !='none'){
+					return val;
+				}
+				return 'none';
+			});
 		case 'BEGIN_NEW_ROW':
 			if(action.makeSelectable) {
 				return ['select', 'select', 'select', 'select'];
@@ -61,8 +68,15 @@ const feedbackReducer = (state=FEEDBACK_START, action, pegs) => {
 };
 
 const rowReducer = (state=ROW_START, action) => {
-
 	switch (action.type) {
+		case 'GAME_GIVE_UP':
+			if(action.isActiveRow) {
+				return {
+					pegs: pegsReducer(state.pegs, action),
+					feedback: state.feedback
+				};
+			}
+			return state;
 		case 'BEGIN_NEW_ROW':
 			let betterAction;
 			if(action.isActiveRow && isEqual(['none', 'none', 'none', 'none'], state.pegs)) {

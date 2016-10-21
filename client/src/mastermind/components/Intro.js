@@ -13,7 +13,7 @@ const Rules = () => {
                 })}
             </div>
             <p>The colors are drawn from a pool of 8 colors, each color can only appear once in the code.</p>
-            <p>After each guess, you will be given feedback in the form of some red and white dots</p>
+            <p>After each guess, you will be given feedback in the form of some red and white dots.</p>
             <div className="intro-explain">
                 <Feedback feedbackPegs={['white','none','none','none']} />
             </div>
@@ -22,7 +22,8 @@ const Rules = () => {
                 <Feedback feedbackPegs={['red','none','none','none']} />
             </div>
             <p>A red dot means one of the colors has the right color and the right position.</p>
-            <p>You have 10 attempts to solve the code</p>
+            <p>You have 10 attempts to solve the code.</p>
+            <p>When you guess, you can use the same color multiple times.</p>
         </div>
     );
 };
@@ -31,7 +32,7 @@ const Intro = ({onStartGame, onToggleRules, isRulesHidden})=> {
     return (
         <div className="board" >
             <h1>Mastermind</h1>
-            <button onClick={onStartGame}>Start game</button>
+            <button onClick={onStartGame}>Start game</button>&nbsp;
             <button onClick={onToggleRules}>
                 {isRulesHidden ? 'Show' : 'Hide'} Rules
             </button>

@@ -30,7 +30,7 @@ var App  = React.createClass({
 
 	render: function(){
 		const {dispatch, getState} = this.props;
-	 	const {board, showColorpicker, activeRow, selectedPeg, secretCode, isCodeHidden, gameStatus, isRulesHidden} = getState();
+	 	const {board, showColorpicker, activeRow, selectedPeg, secretCode, isCodeHidden, gameStatus, isRulesHidden, isRevealHidden} = getState();
 
 	 	const remaining = board[activeRow].pegs.filter((val)=>{
 	 		return (val =='select' || val == 'none');
@@ -79,8 +79,10 @@ var App  = React.createClass({
 	 		},
 	 		onGiveUp: () => {
 	 			dispatch(revealSecretCode());
+	 			dispatch(hideColorPicker());
 	 			dispatch(gameGiveUp());
-	 		}
+	 		},
+	 		isRevealHidden
 	 	}
 	 	const onReset = () => {
 	 		dispatch(resetGame());

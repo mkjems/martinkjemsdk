@@ -8,10 +8,12 @@ import selectedPegReducer from './selectedPeg.js';
 import isCodeHiddenReducer from './isCodeHidden';
 import gameStatusReducer from './gameStatus';
 import isRulesHiddenReducer from './isRulesHidden';
+import isRevealHiddenReducer from './isRevealHidden';
 
 const reducer = (state = {}, action) => {
 	console.log('ACTION:',action);
 
+	const isRevealHidden = isRevealHiddenReducer(state.isRevealHidden, action);
 	const isRulesHidden = isRulesHiddenReducer(state.isRulesHidden, action);
 	const gameStatus = gameStatusReducer(state.gameStatus, action);
 	const isCodeHidden = isCodeHiddenReducer(state.isCodeHidden, action);
@@ -22,6 +24,7 @@ const reducer = (state = {}, action) => {
 	const showColorpicker = showColorsReducer(state.showColorpicker, action);
 
 	const newState =  {
+		isRevealHidden,
 		isRulesHidden,
 		gameStatus,
 		isCodeHidden,

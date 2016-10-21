@@ -12,6 +12,10 @@ const boardReducer = (state=BOARD_START, action, activeRow, selectedPeg, secretC
 		{secretCode: secretCode}
 	);
 	switch (action.type) {
+		case 'GAME_GIVE_UP':
+			return state.map((row, index) => {
+				return rowReducer(row, Object.assign({},betterAction,{isActiveRow: (index === activeRow)}));
+			});
 		case 'BEGIN_NEW_ROW':
 			return state.map((row, index) => {
 				return rowReducer(row, Object.assign({},betterAction,{isActiveRow: (index === activeRow)}));

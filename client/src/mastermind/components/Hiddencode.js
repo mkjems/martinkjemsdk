@@ -3,7 +3,7 @@ import React from 'react'
 import Peg from './Peg';
 import classNames from 'classnames';
 
-const Hiddencode = ({secretCode, isCodeHidden, onGiveUp}) => {
+const Hiddencode = ({secretCode, isCodeHidden, onGiveUp, isRevealHidden}) => {
 
 	return (
         <div className={classNames('board', 'board__secret')}>
@@ -12,9 +12,7 @@ const Hiddencode = ({secretCode, isCodeHidden, onGiveUp}) => {
 	            	{secretCode.map((val, index)=>{
 	            		return <Peg key={index} id={index} peg={val} />
 	            	})}
-	            	<div onClick={onGiveUp} className={classNames('peg','cover-giveup')} >
-	            		?
-	            	</div>
+	            	{!isRevealHidden ? <div onClick={onGiveUp} className={classNames('peg','cover-giveup')} >?</div>: null}
 	            </div>
 	            <div className={classNames('cover-slider', {'cover-slider_closed': isCodeHidden})} ></div>
 	        </div>
