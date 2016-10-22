@@ -38,6 +38,8 @@ clean:
 
 build: copy-html copy-ico copy-png webpack-build
 
+build-prod: copy-html copy-ico copy-png webpack-build-prod
+
 webpack-build:
 	./node_modules/webpack/bin/webpack.js
 
