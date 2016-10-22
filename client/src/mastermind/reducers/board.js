@@ -21,6 +21,9 @@ const boardReducer = (state=BOARD_START, action, activeRow, selectedPeg, secretC
 				return rowReducer(row, Object.assign({},betterAction,{isActiveRow: (index === activeRow)}));
 			});
 		case 'CHOSE_THIS_COLOR':
+			if(selectedPeg===undefined){
+				return state;
+			}
 			return state.map((row, index) => {
 				return rowReducer(row, Object.assign({},betterAction,{isActiveRow: (index === activeRow)}));
 			});

@@ -47,7 +47,8 @@ var App  = React.createClass({
             },
             onChooseColor: (name) => {
                 dispatch(onChooseColor(name));
-                dispatch(onAdvanceSelector());
+                const {board, activeRow} = getState();
+                dispatch(onAdvanceSelector(board[activeRow].pegs));
             }, onSubmitRow: () => {
                 dispatch(giveFeedback());
                 const {board, activeRow} = getState();

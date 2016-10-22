@@ -28,8 +28,9 @@ export const giveFeedback = () => ({
 	type: 'GIVE_FEEDBACK'
 });
 
-export const onAdvanceSelector = () => ({
-	type: 'ADVANCE_SELECTOR'
+export const onAdvanceSelector = (pegs) => ({
+	type: 'ADVANCE_SELECTOR',
+	pegs
 });
 
 export const onHideSecretCode = () => ({
