@@ -17,7 +17,15 @@ const Boardrow = (props) => {
                 {pegs.map((val,index) => {
                     const isSelected = ( isActiveRow && (selectedPeg == index) );
                     return (
-                        <Peg gaveUp={gaveUp} isSelected={isSelected} key={index} id={index} peg={val} onPegClick={(isActiveRow && !gaveUp) ? onPegClick: ()=>{}} />
+                        <Peg
+                            isActiveRow={isActiveRow}
+                            gaveUp={gaveUp}
+                            isSelected={isSelected}
+                            key={index}
+                            id={index}
+                            peg={val}
+                            onPegClick={(isActiveRow && !gaveUp) ? onPegClick: ()=>{}}
+                        />
                     );
                 })}
                 <Feedback {...props} />

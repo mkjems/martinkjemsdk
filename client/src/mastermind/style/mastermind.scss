@@ -90,7 +90,7 @@ div {
 }
 
 .svg-hole {
-    width: 20%;
+    width: 60%;
 }
 
 .svg-hole-animation {
@@ -105,7 +105,7 @@ div {
 }
 
 .svg-selected-hole {
-    width: 80%;
+    width: 66%;
 }
 
 .svg-circle {
@@ -120,12 +120,37 @@ div {
     width: 20%;
 }
 
-@keyframes pulse {
+.pulse1 {
+    animation: pulse-one 1.8s infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-out;
+    cursor:pointer;
+}
+
+.pulse2 {
+    animation: pulse-two 1.8s infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-out;
+    cursor:pointer;
+}
+
+@keyframes pulse-one {
   0% {
-    fill:#bbb;
+    stroke: #444444;
   }
   100% {
-    fill:#222;
+    stroke: #888888
+;
+  }
+}
+
+@keyframes pulse-two {
+  0% {
+    stroke: #222222;
+  }
+  100% {
+    stroke: #666666
+;
   }
 }
 
@@ -144,6 +169,19 @@ div {
 .pegIllu {
     width: 60%;
 }
+
+.pegIllu-halo {
+    animation: pulse 1.8s infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear;
+}
+
+.selected-hole-halo {
+    animation: pulse 1.8s infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear;
+}
+
 
 .hide-me {
     display: none;

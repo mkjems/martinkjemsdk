@@ -5,17 +5,16 @@ import Hole from './Hole.js';
 import PegIllu from './PegIllu.js';
 import SelectedHole from './SelectedHole';
 
-
-const Peg = ({id, peg, onPegClick, isSelected}) => {
+const Peg = ({id, peg, onPegClick, isSelected, isActiveRow}) => {
     let markup = '';
     if (peg == 'select' && isSelected) {
-        markup = <SelectedHole />
+        markup = <Hole isSelected="true" isActiveRow={isActiveRow} />
     } else if(peg === 'select') {
-        markup = <Hole type="svg-hole-animation" />;
+        markup = <Hole isActiveRow={isActiveRow}/>;
     } else if (peg === 'none') {
-        markup = <Hole type="svg-hole-normal"  />;
+        markup = <Hole />;
     } else if (peg !== 'none' && peg !== 'select') {
-        markup = <PegIllu peg={peg} colors={TOP_VIEW_COLORS[peg]}/>;
+        markup = <PegIllu peg={peg} colors={TOP_VIEW_COLORS[peg]} isSelected={isSelected} />;
     }
     return (
         <div className="peg" onClick={()=>onPegClick(id)}>
