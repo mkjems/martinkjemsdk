@@ -85,6 +85,7 @@ var App  = React.createClass({
             },
             isRevealHidden
         }
+
         const onReset = () => {
             dispatch(resetGame());
         }
@@ -97,22 +98,7 @@ var App  = React.createClass({
         const onStartGame = () => {
             console.log('startGame');
             const {dispatch, getState} = this.props;
-            const {isCodeHidden} = getState();
-            setTimeout(function(){
-                if(!isCodeHidden){
-                    dispatch(onHideSecretCode());
-                }
-            }, 1000);
-
-            let count = 0;
-            const counter = () => {
-                count++
-                dispatch(randomizeCode());
-                if(count < 25) {
-                    setTimeout(counter, 100);
-                }
-            };
-            counter();
+            dispatch(randomizeCode());
             dispatch(gameBegin());
         }
         const onToggleRules = () => {

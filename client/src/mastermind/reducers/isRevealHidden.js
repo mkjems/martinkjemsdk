@@ -1,4 +1,4 @@
-const isRevealHiddenReducer = (state=false, action)=>{
+const isRevealHiddenReducer = (state=true, action)=>{
 	switch (action.type) {
 		case 'GAME_GIVE_UP':
 			return true;

@@ -90,7 +90,7 @@ div {
 }
 
 .svg-hole {
-    width: 60%;
+    width: 70%;
 }
 
 .svg-hole-animation {
@@ -167,7 +167,7 @@ div {
 }
 
 .pegIllu {
-    width: 60%;
+    width: 70%;
 }
 
 .pegIllu-halo {
@@ -201,6 +201,7 @@ div {
     width: 48px;
     display: flex;
     justify-content:center;
+    align-items: center;
     height:56px;
     margin: 15px;
 }
@@ -213,11 +214,16 @@ div {
     justify-content:center;
     align-items: center;
     height: 48px;
+    width: 48px;
+    background-color: #333;
+    border-radius: 50%;
 }
 .picker-checkmark-active {
-    color: lighten($green, 5);
+    color: lighten($white, 5);
+    background-color: $green;
     &:hover {
         color: $white;
+        background-color: lighten($green,5);
     }
 }
 
@@ -248,8 +254,6 @@ div {
     left: 0px;
     width: 75%;
     background-color: #000;
-    opacity: 1;
-    -webkit-transition: height 1.5s;
 }
 
 .cover-slider_closed {
@@ -270,6 +274,8 @@ div {
     display: flex;
     height: 58px;
 }
+
+
 
 button {
     color: #ccc;
@@ -308,9 +314,19 @@ button {
         width: 25%;
     }
 
+    .picker-checkmark {
+        height: 40px;
+        font-size: 24px;
+    }
+
 }
 
 .board__secret {
     margin: 14px auto;
     border: solid 0px #777;
+}
+
+.bottom-part {
+    margin: 50px auto 0px auto;
+    text-align: center;
 }

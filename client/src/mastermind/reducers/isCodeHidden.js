@@ -1,5 +1,5 @@
 
-const isCodeHiddenReducer = (state=false, action)=>{
+const isCodeHiddenReducer = (state=true, action)=>{
 	switch (action.type) {
 		case 'HIDE_SECRET_CODE':
 			return true;
@@ -8,7 +8,7 @@ const isCodeHiddenReducer = (state=false, action)=>{
 		case 'TOGGLE_SECRET_CODE':
 			return !state;
 		case 'RESET_GAME':
-			return false;
+			return true;
 		default:
 			return state
 	}
