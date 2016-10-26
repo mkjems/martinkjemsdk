@@ -5,7 +5,7 @@ import Hiddencode from './Hiddencode';
 import Boardrow from './Boardrow';
 
 const Gameplay = (props) => {
-    const {board, activeRow, secretCode, isCodeHidden, onGiveUp} = props;
+    const {board, activeRow, secretCode, isCodeHidden, onGiveUp, isRevealHidden} = props;
     return (
         <div>
             <Hiddencode {...props}/>
@@ -19,7 +19,7 @@ const Gameplay = (props) => {
                 	{...props} />;
             })}
             <div className={classnames('board', 'bottom-part')} >
-	        <button onClick={onGiveUp} >Give up</button>
+	        { !isRevealHidden ? <button onClick={onGiveUp} >Give up</button> : null}
 	        </div>
         </div>
     )
