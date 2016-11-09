@@ -4,6 +4,8 @@ const isRevealHiddenReducer = (state=false, action)=>{
 			return true;
 		case 'GAME_BEGIN':
 			return false;
+		case 'GAME_WIN':
+			return true;
 		case 'RESET_GAME':
 			return false;
 		default:
