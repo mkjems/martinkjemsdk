@@ -1,0 +1,21 @@
+a.menu-item {
+	color: #eee;
+}
+
+a.menu-item:hover {
+	color: #fff;;
+}
+
+a.menu-item:visited {
+	color: #eee;
+}
+
+a.menu-item:active {
+	color: yellow;
+}
+
+a.menu-item:link {
+	color: #fff;
+	line-height: 40px;
+	text-decoration: none;
+}

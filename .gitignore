@@ -1,7 +1,5 @@
 logs
 *.log
-.vagrant
-.Vagrantfile.swp
-client/build/*
+build
 node_modules
 tmp

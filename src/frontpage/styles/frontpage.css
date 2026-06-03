@@ -1,0 +1,153 @@
+@import '../../theme/colors.css';
+@import './burger-menu.css';
+@import './side-menu.css';
+@import './illu.css';
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+
+}
+
+body {
+	background-color: var(--color-light-gray);
+	font-family: sans-serif;
+	margin: 0px;
+	margin-bottom: 100px;
+	padding: 0px;
+}
+
+img {
+	opacity: 0.4;
+}
+
+.header-burger {
+	position: absolute;
+}
+.header-burger-icon {
+	font-size: 34px;
+	margin-left: 10px;
+	color: #aaaaaa;
+}
+
+.jumbo {
+	/*background: linear-gradient(0deg, #fffff1, #ffffff);*/
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.jumbo-title {
+	color: #222222;
+	text-transform: uppercase;
+	font-size: 40px;
+}
+
+section {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	background-color: #ffffff;
+	margin-bottom: 10px;
+}
+.sec_01 {
+}
+
+.sec_02 {
+
+}
+
+.section-text {
+	max-width: 350px;
+	width: 65%;
+	margin: 0 30px;
+}
+
+.section-illu {
+	margin-left: 30px;
+	width: 35%;
+}
+
+.illu-svg {
+	margin: 20px 0;
+	width: 100%;
+}
+
+button.positive {
+	transition: background-color .3s ease-out;
+	background-color: var(--color-green);
+	padding: 10px 25px;
+	border: 0;
+	border-radius: 40px;
+	font-size: 15px;
+}
+
+button.positive:hover {
+	background-color: var(--color-light-green);
+}
+
+button.positive:active {
+	background-color: var(--color-dark-green);
+}
+
+button.positive:focus {
+    outline: none;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 550px) {
+	section {
+		flex-direction: column;
+	}
+
+	.section-text, .section-illu {
+		text-align: center;
+	}
+
+	.section-text {
+		margin-bottom: 40px;
+		width: 100%;
+	}
+
+	.jumbo-title {
+		font-size: 30px;
+	}
+
+	.bm-burger-button {
+		width: 20px;
+		height: 20px;
+	}
+
+	.section-illu {
+		margin-left: 0px;
+		width: 100%;
+	}
+
+	.illu-svg {
+		margin-top: 30px;
+	}
+
+}
+
+
+@media screen and (min-width: 700px) {
+
+}
+
+@media screen and (min-width: 780px) {
+  .container {
+    width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
