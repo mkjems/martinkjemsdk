@@ -1,21 +1,17 @@
 import {
-	CODE_LENGTH,
 	ROW_START
 } from '../script/constants.js';
-
-import {intersection, includes, compact} from 'lodash';
-import isEqual from 'lodash.isequal';
 
 function calculateFeedback(secret, answer) {
 	const num_reds_arr = secret.map((val, index) => {
 		return val == answer[index];
 	});
-	const num_reds = compact(num_reds_arr).length;
+	const num_reds = num_reds_arr.filter(Boolean).length;
 	const reds_arr = Array(num_reds).fill('red');
 	var num_found_in_secret = secret.map((val) => {
 		return answer.includes(val);
 	});
-	num_found_in_secret = compact(num_found_in_secret);
+	num_found_in_secret = num_found_in_secret.filter(Boolean);
 	const num_whites = (num_found_in_secret.length) - num_reds;
 	const whites_arr = Array(num_whites).fill('white');
 	const none_arr = Array(4 - ( num_whites + num_reds) ).fill('none');
@@ -78,7 +74,7 @@ const rowReducer = (state=ROW_START, action) => {
 			return state;
 		case 'BEGIN_NEW_ROW':
 			let betterAction;
-			if(action.isActiveRow && isEqual(['none', 'none', 'none', 'none'], state.pegs)) {
+			if(action.isActiveRow && state.pegs.every((peg) => peg === 'none')) {
 				betterAction = Object.assign({}, action, {makeSelectable:true})
 			} else {
 				betterAction = action;

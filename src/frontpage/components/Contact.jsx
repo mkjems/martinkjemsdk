@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Iconbusinessman from '../assets/businessman_in_circle.svg?react';
+import iconBusinessman from '../assets/businessman_in_circle.svg';
 
 const ContactInfo = () => {
 	return (
@@ -16,7 +16,7 @@ const Contact = ({onContactClick, showContact}) => {
 	return (
 		<section className="sec_01">
 		    <div className="section-illu">
-		        <Iconbusinessman className='illu-svg' />
+		        <img src={iconBusinessman} className="illu-svg" alt="" />
 		    </div>
 		    <div className="section-text">
 		        <h2>Web developer</h2>

@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 
 import Hiddencode from './Hiddencode';
 import Boardrow from './Boardrow';
@@ -18,7 +17,7 @@ const Gameplay = (props) => {
                 	feedbackPegs={row.feedback}
                 	{...props} />;
             })}
-            <div className={classnames('board', 'bottom-part')} >
+            <div className="board bottom-part" >
 	        { !isRevealHidden ? <button onClick={onGiveUp} >Give up</button> : null}
 	        </div>
         </div>

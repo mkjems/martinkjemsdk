@@ -1,11 +1,9 @@
 import React from 'react';
 
-import Iconmastermind from '../assets/mastermind_in_circle.svg?react';
-import Counter from './Counter';
+import iconMastermind from '../assets/mastermind_in_circle.svg';
 import Contact from './Contact';
 
 const Restofpage = (props) => {
-    console.log(props);
     return (
         <div>
             <header>
@@ -16,7 +14,7 @@ const Restofpage = (props) => {
             <div className="container">
                 <section className="sec_02">
                     <div className="section-illu">
-                        <Iconmastermind className='illu-svg' />
+                        <img src={iconMastermind} className="illu-svg" alt="" />
                     </div>
                     <div className="section-text">
                         <h2>Play Mastermind</h2>

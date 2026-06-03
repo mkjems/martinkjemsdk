@@ -7,41 +7,31 @@ import Burgermenu from '../components/burger-menu';
 
 import '../styles/frontpage.css';
 
-import {createStore} from 'redux';
-import reducer from './reducer';
+class Frontpage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showContact: false
+        };
+    }
 
-const store = createStore(reducer);
+    toggleContactInfo = () => {
+        this.setState((state) => ({
+            showContact: !state.showContact
+        }));
+    };
 
-const render = () => {
-    const state = store.getState()
-    const onContactClick = () =>
-                    store.dispatch({
-                        type: 'TOGGLE_SHOW_CONTACT_INFO'
-                    })
+    render() {
+        return (
+            <div>
+                <Burgermenu />
+                <Restofpage
+                    showContact={this.state.showContact}
+                    onContactClick={this.toggleContactInfo}
+                />
+            </div>
+        );
+    }
+}
 
-    ReactDOM.render(
-        <div>
-            <Burgermenu onContactClick = {onContactClick} />
-            <Restofpage
-                showContact={state.showContact}
-                counterVal={state.counterVal}
-                increment = {() =>
-                    store.dispatch({
-                        type: 'INCREMENT'
-                    })
-                }
-                decrement = {() =>
-                    store.dispatch({
-                        type: 'DECREMENT'
-                    })
-                }
-                onContactClick = {onContactClick}
-            />
-        </div>,
-        document.getElementById('app')
-    );
-};
-
-store.subscribe(render);
-
-render();
+ReactDOM.render(<Frontpage />, document.getElementById('app'));

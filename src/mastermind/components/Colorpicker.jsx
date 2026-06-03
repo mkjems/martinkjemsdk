@@ -1,5 +1,4 @@
 import React from 'react';
-import map from 'lodash.map';
 
 import {SIDEWAYS_COLORS} from '../script/constants'
 import Pegsideways from './Pegsideways';
@@ -9,7 +8,8 @@ import Checkmark from './Checkmark';
 const Colorpicker = ({onChooseColor, onSubmitRow, isCompleteRow}) => {
     return (
         <div className="picker-box">
-            {map(SIDEWAYS_COLORS, (colors, name) => {
+            {Object.keys(SIDEWAYS_COLORS).map((name) => {
+                const colors = SIDEWAYS_COLORS[name];
                 return (
                     <div key={name} className="picker-color" onClick={()=>onChooseColor(name)}>
                         <Pegsideways colors={colors} />
